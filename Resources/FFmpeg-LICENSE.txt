@@ -4,6 +4,9 @@ Source: https://ffmpeg.org/
 Version: n8.0.1 (commit 894da5ca7d742e4429ffb2af534fcda0103ef593)
 License: LGPL-2.1-or-later
 
-The build script uses FFmpeg's default LGPL configuration and does not enable
-GPL or nonfree components. The corresponding source and build configuration are
-available in Vendor/ffmpeg and Scripts/build-ffmpeg.sh.
+The build excludes GPL, version-3, and nonfree components. The corresponding
+source and build configuration are available in Vendor/ffmpeg and
+Scripts/build-ffmpeg.sh. The full LGPL-2.1 text is in
+Contents/Resources/Licenses/FFmpeg-LGPL-2.1.txt.
+
+This software is based in part on the work of the Independent JPEG Group.

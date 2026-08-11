@@ -52,6 +52,12 @@ The DMG opens with `Whisper Transcriber.app` and an `Applications` shortcut.
 Drag the app icon onto `Applications` to install it. Submit and staple the DMG
 itself before sharing it as a GitHub Release asset.
 
+## License
+
+Whisper Transcriber is available under the [MIT License](LICENSE). See
+[third-party notices](THIRD_PARTY_NOTICES.md) for bundled component licenses
+and source references.
+
 ## Notes
 
 - `Vendor/whisper.cpp` and `Vendor/ffmpeg` are pinned Git submodules. After a non-recursive clone, run `git submodule update --init --recursive`.
