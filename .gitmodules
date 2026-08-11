@@ -1,0 +1,6 @@
+[submodule "Vendor/ffmpeg"]
+	path = Vendor/ffmpeg
+	url = https://github.com/FFmpeg/FFmpeg.git
+[submodule "Vendor/whisper.cpp"]
+	path = Vendor/whisper.cpp
+	url = https://github.com/ggml-org/whisper.cpp.git

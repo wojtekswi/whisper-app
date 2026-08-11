@@ -1,0 +1,14 @@
+.DS_Store
+.build/
+.swiftpm/
+.gstack/
+build/
+
+Vendor/whisper.cpp/build-macos/
+Vendor/ffmpeg/build-macos/
+Vendor/ffmpeg/config.asm
+Vendor/ffmpeg/config.h
+Vendor/ffmpeg/config_components.h
+Vendor/ffmpeg/ffmpeg
+Vendor/ffmpeg/ffplay
+Vendor/ffmpeg/ffprobe

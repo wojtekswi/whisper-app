@@ -1,0 +1,9 @@
+FFmpeg is bundled to decode Matroska audio files.
+
+Source: https://ffmpeg.org/
+Version: n8.0.1 (commit 894da5ca7d742e4429ffb2af534fcda0103ef593)
+License: LGPL-2.1-or-later
+
+The build script uses FFmpeg's default LGPL configuration and does not enable
+GPL or nonfree components. The corresponding source and build configuration are
+available in Vendor/ffmpeg and Scripts/build-ffmpeg.sh.

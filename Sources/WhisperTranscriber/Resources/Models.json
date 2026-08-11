@@ -1,0 +1,12 @@
+{
+  "repository": "https://huggingface.co/ggerganov/whisper.cpp",
+  "whisperCppVersion": "v1.9.2",
+  "models": [
+    "tiny",
+    "base",
+    "small",
+    "medium",
+    "large-v3-turbo",
+    "large-v3"
+  ]
+}
