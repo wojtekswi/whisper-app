@@ -39,7 +39,18 @@ Build a signed release app at `build/WhisperTranscriber.app`:
 SIGNING_IDENTITY="Developer ID Application: Your Name (TEAMID)" zsh Scripts/build-app.sh
 ```
 
-The packaging script rebuilds whisper.cpp and the constrained arm64 FFmpeg binaries before signing the app.
+The packaging script compiles `whisper-icon.icon`, rebuilds whisper.cpp and the
+constrained arm64 FFmpeg binaries, then signs the app.
+
+Create a drag-to-Applications DMG after notarizing and stapling the app:
+
+```sh
+zsh Scripts/build-dmg.sh
+```
+
+The DMG opens with `Whisper Transcriber.app` and an `Applications` shortcut.
+Drag the app icon onto `Applications` to install it. Submit and staple the DMG
+itself before sharing it as a GitHub Release asset.
 
 ## Notes
 

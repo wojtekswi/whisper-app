@@ -7,6 +7,7 @@ binary="$root/.build/arm64-apple-macosx/release/WhisperTranscriber"
 resource_bundle="$root/.build/arm64-apple-macosx/release/WhisperTranscriber_WhisperTranscriber.bundle"
 signing_identity="${SIGNING_IDENTITY:-Developer ID Application: GGS IT CONSULTING Sp. z o.o. (MLPCTPHBYK)}"
 
+zsh "$root/Scripts/build-icon.sh"
 zsh "$root/Scripts/build-whisper.sh"
 zsh "$root/Scripts/build-ffmpeg.sh"
 swift build -c release --package-path "$root" --product WhisperTranscriber
