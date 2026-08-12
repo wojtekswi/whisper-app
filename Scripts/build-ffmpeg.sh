@@ -26,7 +26,7 @@ make distclean >/dev/null 2>&1 || true
   --enable-avutil \
   --enable-swresample \
   --enable-protocol=file \
-  --enable-demuxer=matroska \
+  --enable-demuxer=matroska,mov \
   --enable-muxer=pcm_f32le \
   --enable-encoder=pcm_f32le \
   --enable-filter=aresample \

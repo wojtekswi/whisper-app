@@ -62,8 +62,9 @@ enum FFmpegDecoder {
             .appendingPathComponent("Whisper Transcriber", isDirectory: true)
         try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
         let pcmURL = directory.appendingPathComponent("\(UUID().uuidString).f32")
+        var succeeded = false
         defer {
-            if cancellation.isCancelled { try? FileManager.default.removeItem(at: pcmURL) }
+            if !succeeded { try? FileManager.default.removeItem(at: pcmURL) }
             cancellation.clearHandler()
         }
 
@@ -96,6 +97,7 @@ enum FFmpegDecoder {
             throw TranscriptionError.invalidAudio
         }
         progress(1)
+        succeeded = true
         return PreparedAudio(pcmURL: pcmURL, durationMilliseconds: details.durationMilliseconds)
     }
 

@@ -52,6 +52,23 @@ enum MediaPreparer {
         if details.preparationBackend == .ffmpeg {
             return try await FFmpegDecoder.prepare(details, cancellation: cancellation, progress: progress)
         }
+
+        do {
+            return try await prepareWithAVFoundation(details, cancellation: cancellation, progress: progress)
+        } catch is TranscriptionError where cancellation.isCancelled {
+            throw TranscriptionError.cancelled
+        } catch {
+            // AVFoundation rejects some otherwise valid MP4 audio tracks. Retry with
+            // the bundled decoder so users are not limited by its codec support.
+            return try await FFmpegDecoder.prepare(details, cancellation: cancellation, progress: progress)
+        }
+    }
+
+    private static func prepareWithAVFoundation(
+        _ details: MediaDetails,
+        cancellation: CancellationToken,
+        progress: @escaping @Sendable (Double) -> Void
+    ) async throws -> PreparedAudio {
         let accessGranted = details.url.startAccessingSecurityScopedResource()
         defer {
             if accessGranted { details.url.stopAccessingSecurityScopedResource() }
